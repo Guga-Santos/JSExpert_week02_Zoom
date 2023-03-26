@@ -1,5 +1,3 @@
-
-
 const recordClick = function (recorderBtn) {
   this.recordingEnabled = false
   return () => {
@@ -13,8 +11,11 @@ const onload = () => {
   const room = urlParams.get('room');
   console.log('this is the room', room)
 
-  const recorderBtn = document.getElementById('record')
-  recorderBtn.addEventListener('click', recordClick(recorderBtn))
+  // const recorderBtn = document.getElementById('record')
+  // recorderBtn.addEventListener('click', recordClick(recorderBtn))
+
+  const view = new View();
+  view.renderVideo({ userId: 'test01', url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDk0OTYwZGZmZTM0YmY3MWI0NDE4MWI2Zjc4NjVkMmQ4ZDBlOTFmOSZjdD1n/TuDaPP6VwTObsqzG4p/giphy.mp4', })
 
 }
 
