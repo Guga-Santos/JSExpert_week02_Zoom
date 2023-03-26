@@ -17,9 +17,9 @@ const onload = () => {
   const view = new View();
   const media = new Media()
   const deps = {
+    room,
     view,
-    media,
-    room
+    media
   }
 
   Business.initialize(deps);

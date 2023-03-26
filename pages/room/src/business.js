@@ -8,12 +8,24 @@ class Business {
   }
   //Se não for static, não conseguimos instanciar.
   static initialize(deps) {
-    const instance = new Business();
+    const instance = new Business(deps);
     return instance._init()
   }
  
-  _init() {
-    this.currentStream = this.media.getCamera();
-    console.log('Init!!', this.currentStream)
+  async _init() {
+    this.currentStream = await this.media.getCamera();
+    console.log('Init!!')
+
+    this.addVideoStream('test01')
+
+  }
+
+  addVideoStream(userId, stream = this.currentStream) {
+    const isCurrentId = false;
+    this.view.renderVideo({
+      userId,
+      stream,
+      isCurrentId
+    })
   }
 }
