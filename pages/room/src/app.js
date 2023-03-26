@@ -15,6 +15,14 @@ const onload = () => {
   // recorderBtn.addEventListener('click', recordClick(recorderBtn))
 
   const view = new View();
+  const media = new Media()
+  const deps = {
+    view,
+    media,
+    room
+  }
+
+  Business.initialize(deps);
   // view.renderVideo({ userId: 'test01', url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDk0OTYwZGZmZTM0YmY3MWI0NDE4MWI2Zjc4NjVkMmQ4ZDBlOTFmOSZjdD1n/TuDaPP6VwTObsqzG4p/giphy.mp4', })
   // view.renderVideo({ isCurrentId: true, url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDk0OTYwZGZmZTM0YmY3MWI0NDE4MWI2Zjc4NjVkMmQ4ZDBlOTFmOSZjdD1n/TuDaPP6VwTObsqzG4p/giphy.mp4', })
   // view.renderVideo({ userId: 'test02', url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDk0OTYwZGZmZTM0YmY3MWI0NDE4MWI2Zjc4NjVkMmQ4ZDBlOTFmOSZjdD1n/TuDaPP6VwTObsqzG4p/giphy.mp4', })

@@ -3,6 +3,8 @@ class Business {
     this.room = room;
     this.media = media;
     this.view = view;
+
+    this.currentStream = {};
   }
 
   initialize(deps) {
