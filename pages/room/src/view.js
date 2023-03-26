@@ -12,8 +12,18 @@ class View {
     if(src) {
       video.controls = true;
       video.loop = true;
+      Util.sleep(200).then(_ => video.play());
+    }
+
+    if(srcObject) {
+      video.addEventListener('loadedmetadata', () => video.play());
     }
 
     return video;
   }
+  
+  renderVideo({ userId, stream = null, url = null }) {
+    const video = this.createVideoElement({ src: url, srcObject: stream });
+  }
+
 }
