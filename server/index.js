@@ -21,7 +21,7 @@ io.on('connection', socket => {
     socket.join(roomId);
     // Emite uma mensagem para todos na sala quando um usuário se conectar
     socket.to(roomId).broadcast.emit('user-connected', userId);
-    socket.on('disconnected!', () => {
+    socket.on('disconnect', () => {
       console.log('disconnected!', roomId, userId)
       // Emite uma mensagem para todos na sala quando um usuário se desconectar
       socket.to(roomId).broadcast.emit('user-disconnected', userId);

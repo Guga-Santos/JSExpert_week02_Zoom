@@ -13,7 +13,6 @@ class SocketBuilder {
 
   setOnUserDisconnected(fn) {
     this.onUserDisconnected = fn;
-
     return this
   }
 

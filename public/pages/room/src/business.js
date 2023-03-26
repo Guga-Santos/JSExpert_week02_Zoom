@@ -5,6 +5,7 @@ class Business {
     this.view = view;
     this.socketBuilder = socketBuilder
         .setOnUserConnected(this.onUserConnected())
+        .setOnUserDisconnected(this.onUserDisconnected())
         .build();
     this.socketBuilder.emit('join-room', this.room, 'test01')
 
@@ -18,10 +19,7 @@ class Business {
  
   async _init() {
     this.currentStream = await this.media.getCamera();
-    console.log('Init!!')
-
     this.addVideoStream('test01')
-
   }
 
   addVideoStream(userId, stream = this.currentStream) {
@@ -36,6 +34,12 @@ class Business {
   onUserConnected = function() {
     return userId => {
       console.log('user connected!', userId)
+    }
+  }
+
+  onUserDisconnected = function() {
+    return userId => {
+      console.log('user Disconnected!', userId)
     }
   }
 }
