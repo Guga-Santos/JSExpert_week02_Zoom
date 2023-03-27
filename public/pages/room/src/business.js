@@ -33,7 +33,7 @@ class Business {
 
   onUserConnected = function() {
     return userId => {
-      console.log('user connected!', userId)
+      console.log('user Connected!', userId)
     }
   }
 
